@@ -18,10 +18,6 @@ def power_numbers(*numbers):
     return powers
 
 
-# print(power_numbers(1, 2, 5, 7))
-
-
-
 # filter types
 ODD = "odd"
 EVEN = "even"
@@ -40,12 +36,13 @@ def filter_numbers(numbers, mode):
     <<< [2, 4]
     """
     new_numbers = []
-    for number in numbers:
-        remainder = number % 2
-        if remainder != 0 and mode == ODD:
-            new_numbers.append(number)
-        elif remainder == 0 and mode == EVEN:
-            new_numbers.append(number)
+    if mode == ODD or mode == EVEN:
+        for number in numbers:
+            remainder = number % 2
+            if remainder != 0 and mode == ODD:
+                new_numbers.append(number)
+            elif remainder == 0 and mode == EVEN:
+                new_numbers.append(number)
     if mode == PRIME:
         new_numbers = list(filter(is_prime, numbers))
     return new_numbers
