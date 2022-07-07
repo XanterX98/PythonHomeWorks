@@ -36,20 +36,25 @@ def filter_numbers(numbers, mode):
     <<< [2, 4]
     """
     new_numbers = []
-    if mode == ODD or mode == EVEN:
-        for number in numbers:
-            remainder = number % 2
-            if remainder != 0 and mode == ODD:
-                new_numbers.append(number)
-            elif remainder == 0 and mode == EVEN:
-                new_numbers.append(number)
-    if mode == PRIME:
+    if mode == ODD:
+        new_numbers = list(filter(is_odd, numbers))
+    elif mode == EVEN:
+        new_numbers = list(filter(is_even, numbers))
+    elif mode == PRIME:
         new_numbers = list(filter(is_prime, numbers))
     return new_numbers
 
 
+def is_odd(in_num):
+    return in_num % 2 != 0
+
+
+def is_even(in_num):
+    return in_num % 2 == 0
+
+
 def is_prime(in_num):
-    if in_num % 2 == 0:
+    if in_num % 2 == 0 or in_num == 1:
         return in_num == 2
     d = 3
     while d * d <= in_num and in_num % d != 0:
