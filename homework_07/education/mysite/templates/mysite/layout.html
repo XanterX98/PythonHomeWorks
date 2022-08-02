@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="{% static 'mysite/img/favicon.png' %}" type="image/png" />
+    <title>
+        {% block title %}
+            Ali Education
+        {% endblock %}
+    </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'mysite/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'mysite/css/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'mysite/css/themify-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'mysite/vendors/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'mysite/vendors/nice-select/css/nice-select.css' %}" />
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'mysite/css/style.css' %}" />
+  </head>
+
+  <body>
+
+    {% include 'mysite/_header.html' %}
+
+    {% if white_header %}
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+          <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-6">
+                  <div class="banner_content text-center">
+                    <h2>{{ page_title }}</h2>
+                    <div class="page_link">
+                      <a href="{% url 'mysite:index' %}">Home</a>
+                      <span>{{ page_title }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+    {% endif %}
+
+    {% block body %}
+        Body block
+    {% endblock %}
+
+    {% include 'mysite/_footer.html' %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'mysite/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'mysite/js/popper.js' %}"></script>
+    <script src="{% static 'mysite/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mysite/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'mysite/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'mysite/js/owl-carousel-thumb.min.js' %}"></script>
+    <script src="{% static 'mysite/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'mysite/js/mail-script.js' %}"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="{% static 'mysite/js/gmaps.min.js' %}"></script>
+    <script src="{% static 'mysite/js/theme.js' %}"></script>
+  </body>
+</html>
