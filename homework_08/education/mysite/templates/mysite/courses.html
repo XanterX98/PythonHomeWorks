@@ -1,0 +1,9 @@
+{% extends 'mysite/layout.html' %}
+
+{% block title %}
+    All courses
+{% endblock %}
+
+{% block body %}
+    {% include 'mysite/_courses.html' with section_gap_top=1 %}
+{% endblock %}
